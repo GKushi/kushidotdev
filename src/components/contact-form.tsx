@@ -46,7 +46,7 @@ export default function ContactForm() {
     }
 
     const sendMail = async () => {
-      const res = await fetch(`${import.meta.env.PUBLIC_API}/api/send-mail`, {
+      const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/send-mail`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export default function ContactForm() {
           {errors.message && <p className={errorStyle}>Nieprawidłowa wiadomość</p>}
         </div>
         <div>
-          {!firstRender && <ReCAPTCHA size="invisible" sitekey={import.meta.env.PUBLIC_RECAPTCHA} ref={recaptchaRef} />}
+          {!firstRender && <ReCAPTCHA size="invisible" sitekey={import.meta.env.PUBLIC_RECAPTCHA_KEY} ref={recaptchaRef} />}
           <button className={`ml-auto block rounded-2xl bg-secondary px-6 py-3 text-background hover:bg-opacity-80 md:px-12 md:py-6 md:text-2xl ${loading ? 'bg-opacity-80' : ''}`}>Wyślij</button>
         </div>
       </form>
