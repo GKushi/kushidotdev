@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import ContactForm from './contact-form';
+import LinkedinLogo from '../assets/linkedin.png';
+import GithubLogo from '../assets/github-mark.svg?raw';
+---
+
+<div class="-scroll-m-5 px-6 md:-scroll-m-10" id="contact">
+  <div class="mx-auto w-full max-w-7xl space-y-5 py-10 md:space-y-10 md:py-20">
+    <h2 class="text-lg font-black text-secondary sm:text-3xl md:text-5xl">Skontaktuj się ze mną.</h2>
+    <div class="flex flex-col gap-14 md:gap-20 xl:flex-row">
+      <ContactForm client:load />
+      <div class="my-auto w-full space-y-4 text-right text-3xl font-bold leading-none md:space-y-10 md:text-4xl xl:pb-28 xl:text-left">
+        <a href="mailto:gaworski.kasper@gmail.com" class="block break-words text-primary">gaworski.kasper@gmail.com</a>
+        <a href="tel:+48512594510" class="block text-secondary">+48 512 594 510</a>
+        <div class="flex justify-end gap-3 xl:justify-start">
+          <a href="https://github.com/GKushi" target="_blank"><Fragment set:html={GithubLogo} /></a>
+          <a href="https://www.linkedin.com/in/kasper-gaworski" target="_blank"><Image src={LinkedinLogo} alt="LinkedIn Logo" width={28} height={24} /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
