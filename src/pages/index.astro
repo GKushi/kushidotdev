@@ -3,10 +3,14 @@ import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import About from '../components/about.astro';
 import Passion from '../components/passion.astro';
+import Projects from '../components/projects.astro';
 ---
 
 <Layout title="GKushi - Software Developer">
   <Header />
-  <About />
-  <Passion />
+  <main>
+    <About />
+    <Projects />
+    <Passion />
+  </main>
 </Layout>
