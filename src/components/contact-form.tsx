@@ -69,7 +69,7 @@ export default function ContactForm() {
       .promise(sendMail(), {
         loading: 'Wysyłanie... To może chwilę potrwać.',
         success: 'Wiadomość została wysłana!',
-        error: 'Coś poszło nie tak, prosimy spróbować później.',
+        error: 'Coś poszło nie tak, proszę spróbować później.',
       })
       .then(() => {
         reset();
