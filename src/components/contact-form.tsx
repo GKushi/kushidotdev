@@ -46,7 +46,7 @@ export default function ContactForm() {
     }
 
     const sendMail = async () => {
-      const res = await fetch(import.meta.env.PUBLIC_API_URL, {
+      const res = await fetch(`${import.meta.env.VERCEL_URL || ''}/send-mail`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
