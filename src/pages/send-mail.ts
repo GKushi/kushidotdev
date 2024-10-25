@@ -51,6 +51,8 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ message: 'Invalid data' }), { status: 401 });
   }
 
+  if (!captchaResponse.success || captchaResponse.score < 0.5) return new Response(JSON.stringify({ message: 'Invalid captcha' }), { status: 401 });
+
   const transporter = nodemailer.createTransport({
     host: import.meta.env.HOST,
     port: parseInt(import.meta.env.PORT),
