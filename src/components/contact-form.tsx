@@ -46,7 +46,7 @@ export default function ContactForm() {
     }
 
     const sendMail = async () => {
-      const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/send-mail`, {
+      const res = await fetch(import.meta.env.PUBLIC_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

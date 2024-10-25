@@ -7,12 +7,13 @@ import sitemap from '@astrojs/sitemap';
 
 import react from '@astrojs/react';
 
-import vercel from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kushi.dev',
   integrations: [tailwind(), sitemap(), react()],
+  output: 'hybrid',
   adapter: vercel({
     webAnalytics: {
       enabled: true,
